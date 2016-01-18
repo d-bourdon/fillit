@@ -6,156 +6,12 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 13:24:11 by paim              #+#    #+#             */
-/*   Updated: 2016/01/18 11:10:51 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/18 12:28:29 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include <sys/uio.h>
-#include <unistd.h>
+#include <fillit.h>
 
-void	ft_putstr(char const *s);
-void	ft_putnbr(int	c);
-void	openingfile(int argc, char **argv);
-int		check_file(char **argv);
-
-static int		check_coord_tetra(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if(str[i] == '#' && str[i + 5] == '#' && str[i + 10] == '#' && 
-				str[i + 11] == '#')
-			return (1);
-		if(str[i] == '#' && str[i + 3] == '#' && str[i + 4] == '#' && 
-				str[i + 5] == '#')
-			return (1);
-		if(str[i] == '#' && str[i + 1] == '#' && str[i + 6] == '#' && 
-				str[i + 11] == '#')
-			return (1);
-		i++;
-	}
-	return(0);
-}
-
-
-static int		check_coord_tetra2(char *str)
-{
-	int	i;
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if(str[i] == '#' && str[i + 1] == '#' && str[i + 2] == '#' &&
-				str[i + 7] == '#')
-			return (1);
-		if(str[i] == '#' && str[i + 1] == '#' && str[i + 5] == '#' &&
-				str[i + 10] == '#')
-			return (1);
-		if(str[i] == '#' && str[i + 4] == '#' && str[i + 5] == '#' && 
-				str[i + 10] == '#')
-			return (1);
-		if(str[i] == '#' && str[i + 1] == '#' && str[i + 2] == '#' && 
-				str[i + 6] == '#')
-			return (1);
-		i++;
-	}
-	return(0);
-}
-
-static int		check_coord_tetra3(char *str)
-{
-	int	i;
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if(str[i] == '#' && str[i + 5] == '#' && str[i + 6] == '#' && 
-				str[i + 7] == '#')
-			return (1);
-		if(str[i] == '#' && str[i + 1] == '#' && str[i + 5] == '#' && 
-				str[i + 6] == '#')
-			return (1);
-		if(str[i] == '#' && str[i + 4] == '#' && str[i + 5] == '#' && 
-				str[i + 6] == '#')
-			return (1);
-		i++;
-	}
-	return(0);
-}
-
-static int		check_coord_tetra4(char *str)
-{
-	int	i;
-	i = 0;
-	while(str[i] != '\0')
-	{
-		if(str[i] == '#' && str[i + 1] == '#' && str[i + 2] == '#' && 
-				str[i + 5] == '#')
-			return (1);
-		if(str[i] == '#' && str[i + 5] == '#' && str[i + 9] == '#' && 
-				str[i + 10] == '#')
-			return (1);
-		if(str[i] == '#' && str[i + 5] == '#' && str[i + 6] == '#' && 
-				str[i + 10] == '#')
-			return (1);
-		i++;
-	}
-	return(0);
-}
-
-static int		check_coord_tetra5(char *str)
-{
-	int	i;
-
-	i = 0;
-	while(str[i] != '\0')
-	{
-		if(str[i] == '#' && str[i + 1] == '#' && str[i + 2] == '#' && 
-				str[i + 3] == '#')
-			return(1);
-		if(str[i] == '#' && str[i + 5] == '#' && str[i + 10] == '#' && 
-				str[i + 15] == '#')
-			return(1);
-		if(str[i] == '#' && str[i + 1] == '#' && str[i + 6] == '#' && 
-				str[i + 7] == '#')
-			return(1);
-		i++;
-	}
-	return (0);
-}
-
-static int		check_coord_tetra6(char *str)
-{	int	i;
-	i = 0;
-	while(str[i] != '\0')
-	{
-		if(str[i] == '#' && str[i + 4] == '#' && str[i + 5] == '#' && 
-				str[i + 9] == '#')
-			return (1);
-		if(str[i] == '#' && str[i + 1] == '#' && str[i + 4] == '#' && 
-				str[i + 5] == '#')
-			return (1);
-		if(str[i] == '#' && str[i + 5] == '#' && str[i + 6] == '#' && 
-				str[i + 11] == '#')
-			return (1);
-		i++;
-	}
-	return(0);
-}
-
-int		check_tetra(char *str)
-{
-	if (!check_coord_tetra(str) && !check_coord_tetra2(str) 
-			&& !check_coord_tetra3(str) && !check_coord_tetra4(str) 
-			&& !check_coord_tetra5(str) && check_coord_tetra6(str))
-		return (0);
-	else
-		return (1);
-}
 
 int		check_tetraminos(char *str)
 {
@@ -168,31 +24,25 @@ int		check_tetraminos(char *str)
 	k = 0;
 	j = 0;
 	i = 0;
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if(str[i] == '#')
+		if (str[i] == '#')
 			j++;
-		if(str[i] == '.')
+		if (str[i] == '.')
 			k++;
-		if(str[i] == '\n')
+		if (str[i] == '\n')
 			l++;
 		i++;
 	}
-	if(l != 4)
+	if (l != 4 || k != 12 || j != 4)
 	{
-		return (0);
-	}
-	if(k != 12)
-	{
-		return (0);
-	}
-	if (j != 4)
-	{
+		ft_putstr("error\n");
 		return (0);
 	}
 	if (str[i] % 5 != '\n')
 	{
-			return(0);
+		ft_putstr("error\n");
+		return (0);
 	}
 	i = 0;
 	i = check_tetra(str);
@@ -200,7 +50,8 @@ int		check_tetraminos(char *str)
 		return (0);
 	else
 	{
-		return (0);
+		ft_putstr("error\n");
+		return (-1);
 	}
 }
 
@@ -232,9 +83,15 @@ int		check_file(char **argv)
 	{
 		buf[ret] = '\0';
 		if (read(fd, &bn[0], 1) == -1)
+		{
+			ft_putstr("error\n");
 			return (-1);
+		}
 		if (bn[0] != '\n')
+		{
+			ft_putstr("error\n");
 			return (-1);
+		}
 	}
 	close(fd);
 	return (0);
