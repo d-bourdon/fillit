@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 13:24:11 by paim              #+#    #+#             */
-/*   Updated: 2016/01/18 18:38:00 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/19 14:43:33 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,18 +82,19 @@ void		openingfile(int argc, char **argv)
 
 int			*check_file(char **argv)
 {
-	int		tab[27];
+	int		*tab;
 	int		fd;
 	int		ret;
 	char	*buf;
 	char	bn[1];
-	int	i;
+	int		i;
 
 	i = 0;
 	if ((fd = open(argv[1], O_RDONLY)) == -1)
 		return (NULL);
 	if ((buf = (char *)malloc(sizeof(char) * 21)) == NULL)
 		return (NULL);
+	tab = ft_memalloc(108);
 	while ((ret = read(fd, buf, 20)) != -1 && check_tetraminos(buf))
 	{
 		tab[i] = check_tetraminos(buf);
