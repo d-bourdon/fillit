@@ -6,11 +6,25 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 15:15:19 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/19 15:20:34 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/19 17:37:51 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+char	*dlf(char *motif, char l, int piece)
+{
+	int		i;
+
+	i = 0;
+	while (motif[i] > 4)
+	{
+		if (motif[i] == l)
+			motif[i] = 'A' + piece;
+		i++;
+	}
+	return (motif);
+}
 
 char	***returnform(int *tab)
 {
