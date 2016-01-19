@@ -6,7 +6,7 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 17:49:15 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/18 20:20:56 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/19 10:54:16 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,18 @@
 
 void	form11(char ***bigtab, int j)
 {
-	**bigtab[j] = malloc
+	int		k;
+
+	k = 0;
+	bigtab[j] = (char**)malloc(sizeof(char*) * 4);
+	bigtab[j][k] = (char*)malloc(sizeof(char) * 4);
+	bigtab[j][k] = "#\0\0\0";
+	bigtab[j][k + 1] = (char*)malloc(sizeof(char) * 4);
+	bigtab[j][k + 1] = "#\0\0\0";
+	bigtab[j][k + 2] = (char*)malloc(sizeof(char) * 4);
+	bigtab[j][k + 2] = "##\0\0";
+	bigtab[j][k + 3] = (char*)malloc(sizeof(char) * 4);
+	bigtab[j][k + 3] = "\0\0\0\0";
 }
 
 void	form1(char ***bigtab, int j, int nb)
