@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 11:54:54 by paim              #+#    #+#             */
-/*   Updated: 2016/01/19 14:43:25 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/20 17:26:36 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int		check_coord_tetra4(char *str);
 int		check_coord_tetra5(char *str);
 
 char	***returnform(int *tab);
+int		placepossible(cgar **map, char **piece, int y, int x);
+char	*dlf(const char *motif, char l, int piece);
 void	form1(char ***bigtab, int j, int nb);
 void	form11(char ***bigtab, int j);
 void	form12(char ***bigtab, int j);
