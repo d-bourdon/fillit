@@ -6,7 +6,11 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 11:54:54 by paim              #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2016/01/20 17:26:36 by dbourdon         ###   ########.fr       */
+=======
+/*   Updated: 2016/01/20 12:23:48 by paim             ###   ########.fr       */
+>>>>>>> 30e09b674c6003c7280537b676a30a8b6cf575ab
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +23,7 @@
 # include <stdlib.h>
 # include <sys/uio.h>
 # include <unistd.h>
-//# include "laslibft/libft.h"
+# include "libft/libft.h"
 # include <stdio.h> /// Warning Printf ///
 
 void	openingfile(int argc, char **argv);
