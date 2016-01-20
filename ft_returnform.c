@@ -6,7 +6,7 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 15:15:19 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/19 17:37:51 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/19 19:21:27 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,14 @@ char	*dlf(char *motif, char l, int piece)
 	return (motif);
 }
 
-char	***returnform(int *tab)
+
+int	main()
+{
+	char	motif[5] = "..#.";
+	printf("%s", dlf(motif, '#', 5));
+}
+
+/*char	***returnform(int *tab)
 {
 	char	***bigtab;
 	int		i;
@@ -53,4 +60,4 @@ char	***returnform(int *tab)
 			form7(bigtab, j++, tab[i]);
 	}
 	return (bigtab);
-}
+}*/

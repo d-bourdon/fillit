@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 13:24:11 by paim              #+#    #+#             */
-/*   Updated: 2016/01/19 14:43:33 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/20 17:28:28 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,9 @@ int			*check_file(char **argv)
 	char	*buf;
 	char	bn[1];
 	int		i;
+	int		j;
 
+	j = 0;
 	i = 0;
 	if ((fd = open(argv[1], O_RDONLY)) == -1)
 		return (NULL);
@@ -110,6 +112,7 @@ int			*check_file(char **argv)
 			ft_putstr("error\n");
 			return (NULL);
 		}
+		j++;
 	}
 	close(fd);
 	return (tab);
