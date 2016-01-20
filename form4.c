@@ -19,13 +19,13 @@ void	form41(char ***bigtab, int j)
 	k = 0;
 	bigtab[j] = (char**)malloc(sizeof(char*) * 4);
 	bigtab[j][k] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k] = "\0#\0\0";
+	bigtab[j][k] = dlf(".#..", '#', j);
 	bigtab[j][k + 1] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k + 1] = "###\0";
+	bigtab[j][k + 1] = dlf("###.", '#', j);
 	bigtab[j][k + 2] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k + 2] = "\0\0\0\0";
+	bigtab[j][k + 2] = dlf("....", '#', j);
 	bigtab[j][k + 3] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k + 3] = "\0\0\0\0";
+	bigtab[j][k + 3] = dlf("....", '#', j);
 }
 
 void	form42(char ***bigtab, int j)
@@ -35,13 +35,13 @@ void	form42(char ***bigtab, int j)
 	k = 0;
 	bigtab[j] = (char**)malloc(sizeof(char*) * 4);
 	bigtab[j][k] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k] = "\0#\0\0";
+	bigtab[j][k] = dlf(".#..", '#', j);
 	bigtab[j][k + 1] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k + 1] = "##\0\0";
+	bigtab[j][k + 1] = dlf("##..", '#', j);
 	bigtab[j][k + 2] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k + 2] = "\0#\0\0";
+	bigtab[j][k + 2] = dlf(".#..", '#', j);
 	bigtab[j][k + 3] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k + 3] = "\0\0\0\0";
+	bigtab[j][k + 3] = dlf("....", '#', j);
 }
 
 void	form43(char ***bigtab, int j)
@@ -51,13 +51,13 @@ void	form43(char ***bigtab, int j)
 	k = 0;
 	bigtab[j] = (char**)malloc(sizeof(char*) * 4);
 	bigtab[j][k] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k] = "###\0";
+	bigtab[j][k] = dlf("###.", '#', j);
 	bigtab[j][k + 1] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k + 1] = "\0#\0\0";
+	bigtab[j][k + 1] = dlf(".#..", '#', j);
 	bigtab[j][k + 2] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k + 2] = "\0\0\0\0";
+	bigtab[j][k + 2] = dlf("....", '#', j);
 	bigtab[j][k + 3] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k + 3] = "\0\0\0\0";
+	bigtab[j][k + 3] = dlf("....", '#', j);
 }
 
 void	form44(char ***bigtab, int j)
@@ -67,13 +67,13 @@ void	form44(char ***bigtab, int j)
 	k = 0;
 	bigtab[j] = (char**)malloc(sizeof(char*) * 4);
 	bigtab[j][k] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k] = "#\0\0\0";
+	bigtab[j][k] = dlf("#...", '#', j);
 	bigtab[j][k + 1] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k + 1] = "##\0\0";
+	bigtab[j][k + 1] = dlf("##..", '#', j);
 	bigtab[j][k + 2] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k + 2] = "#\0\0\0";
+	bigtab[j][k + 2] = dlf("#...", '#', j);
 	bigtab[j][k + 3] = (char*)malloc(sizeof(char) * 4);
-	bigtab[j][k + 3] = "\0\0\0\0";
+	bigtab[j][k + 3] = dlf("....", '#', j);
 }
 
 void	form4(char ***bigtab, int j, int nb)
