@@ -6,34 +6,30 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 15:15:19 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/19 19:21:27 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/20 17:58:55 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	*dlf(char *motif, char l, int piece)
+char	*dlf(const char *motif, char l, int piece)
 {
+	char	*out;
 	int		i;
 
+	out = (char*)malloc(sizeof(char) * 5);
+	out = (char*)motif;
 	i = 0;
-	while (motif[i] > 4)
+	while (i < 4)
 	{
-		if (motif[i] == l)
-			motif[i] = 'A' + piece;
+		if (out[i] == l)
+			out[i] = 'A' + piece;
 		i++;
 	}
-	return (motif);
+	return (out);
 }
 
-
-int	main()
-{
-	char	motif[5] = "..#.";
-	printf("%s", dlf(motif, '#', 5));
-}
-
-/*char	***returnform(int *tab)
+char	***returnform(int *tab)
 {
 	char	***bigtab;
 	int		i;
@@ -60,4 +56,4 @@ int	main()
 			form7(bigtab, j++, tab[i]);
 	}
 	return (bigtab);
-}*/
+}
