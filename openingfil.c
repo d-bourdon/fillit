@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 13:24:11 by paim              #+#    #+#             */
-/*   Updated: 2016/01/20 17:28:28 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/22 12:55:37 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,53 +69,53 @@ int			check_tetraminos(char *str)
 
 void		openingfile(int argc, char **argv)
 {
-	int	fd;
+	tscheckf	*t;
+	int			filed;
+	int			i;
+	int			j;
 
-	if (argc != 2 || (fd = open(argv[1], O_RDONLY)) == -1)
+	i = 0;
+	j = 0;
+	if (argc != 2 || (filed = open(argv[1], O_RDONLY)) == -1)
 	{
 		ft_putstr("error\n");
 		return ;
 	}
-	check_file(argv);
-	close(fd);
+	if ((t = (tscheckf *)malloc(sizeof(tscheckf))))
+	{
+		ft_putstr("error\n");
+		return ;
+	}
+	check_file(argv, i, j, t);
+	close(filed);
 }
 
-int			*check_file(char **argv)
+int			*check_file(char **argv, int i, int j, tscheckf *t)
 {
-	int		*tab;
-	int		fd;
-	int		ret;
-	char	*buf;
-	char	bn[1];
-	int		i;
-	int		j;
-
-	j = 0;
-	i = 0;
-	if ((fd = open(argv[1], O_RDONLY)) == -1)
+	if ((t->fd = open(argv[1], O_RDONLY)) == -1)
 		return (NULL);
-	if ((buf = (char *)malloc(sizeof(char) * 21)) == NULL)
+	if ((t->buf = (char *)malloc(sizeof(char) * 21)) == NULL)
 		return (NULL);
-	tab = ft_memalloc(108);
-	while ((ret = read(fd, buf, 20)) != -1 && check_tetraminos(buf))
+	t->tab = ft_memalloc(108);
+	while ((t->ret = read(t->fd, t->buf, 20)) != -1 && check_tetraminos(t->buf))
 	{
-		tab[i] = check_tetraminos(buf);
+		t->tab[i] = check_tetraminos(t->buf);
 		i++;
-		buf[ret] = '\0';
-		if (read(fd, &bn[0], 1) == -1)
+		t->buf[t->ret] = '\0';
+		if (read(t->fd, &t->bn[0], 1) == -1)
 		{
 			ft_putstr("error\n");
 			return (NULL);
 		}
-		if (bn[0] != '\n')
+		if (t->bn[0] != (char*)'\n')
 		{
 			ft_putstr("error\n");
 			return (NULL);
 		}
 		j++;
 	}
-	close(fd);
-	return (tab);
+	close(t->fd);
+	return (t->tab);
 }
 
 int			main(int argc, char **argv)

@@ -6,7 +6,7 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 14:46:06 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/20 17:25:11 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/21 14:27:43 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		placepossible(char **map, char **piece, int y, int x)
 	l = 0;
 	while (l < 4 && k < 4)
 	{
-		while(k < 4)
+		while (k < 4)
 		{
 			if (map[x][y] == '.' || piece[l][k] == '.')
 				k++;

@@ -6,11 +6,8 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 11:54:54 by paim              #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2016/01/20 17:26:36 by dbourdon         ###   ########.fr       */
-=======
+/*   Updated: 2016/01/21 14:53:03 by paim             ###   ########.fr       */
 /*   Updated: 2016/01/20 12:23:48 by paim             ###   ########.fr       */
->>>>>>> 30e09b674c6003c7280537b676a30a8b6cf575ab
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +23,17 @@
 # include "libft/libft.h"
 # include <stdio.h> /// Warning Printf ///
 
+typedef struct  scheckf
+{
+	int	*tab;
+	int	fd;
+	int	ret;
+	char	*buf;
+	char	*bn[1];
+}tscheckf;
+
 void	openingfile(int argc, char **argv);
-int		*check_file(char **argv);
+int		*check_file(char **argv, int i, int j, tscheckf *t);
 int		check_tetra(char *str);
 int		check_coord_tetra(char *str);
 int		check_coord_tetra2(char *str);
@@ -36,7 +42,7 @@ int		check_coord_tetra4(char *str);
 int		check_coord_tetra5(char *str);
 
 char	***returnform(int *tab);
-int		placepossible(cgar **map, char **piece, int y, int x);
+int		placepossible(char **map, char **piece, int y, int x);
 char	*dlf(const char *motif, char l, int piece);
 void	form1(char ***bigtab, int j, int nb);
 void	form11(char ***bigtab, int j);
