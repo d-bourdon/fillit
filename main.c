@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/22 16:52:01 by paim              #+#    #+#             */
-/*   Updated: 2016/01/22 18:21:11 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/22 19:12:32 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int		main(int argc, char **argv)
 	char	***bigtab;
 	char	**map;
 	int		ind;
-	int		nbpiece;
 	int		*xy;
+	scheckf	*t;
 
 	xy = (int*)malloc(sizeof(int)*2);
 	xy[0] = 0;
@@ -27,8 +27,8 @@ int		main(int argc, char **argv)
 	openingfil(argc, argv);
 	bigtab = returnform(checkfile(argv, 0, t));
 	map = creamap(carmini(countform(argv, 0)));
-	nbpiece = countform(argv, 0);
-	while (ind < nbpiece)
+	t->nbpiece = countform(argv, 0);
+	while (ind < t->nbpiece)
 	{
 		xy = movemap(map, bigtab[ind]);
 		if (xy[0] >= 0)
