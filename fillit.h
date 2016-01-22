@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 11:54:54 by paim              #+#    #+#             */
-/*   Updated: 2016/01/21 14:53:03 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/22 18:18:29 by paim             ###   ########.fr       */
 /*   Updated: 2016/01/20 12:23:48 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -31,16 +31,19 @@ typedef struct  scheckf
 	char	*buf;
 	char	*bn[1];
 }tscheckf;
-
+int		*movemap(char **map, char **piece);
+char	**remap(char **oldmap);
+int		countform(char **argv, int j);
+int		carmini(int i);
 void	openingfile(int argc, char **argv);
-int		*check_file(char **argv, int i, int j, tscheckf *t);
+int		*check_file(char **argv, int i, tscheckf *t);
 int		check_tetra(char *str);
 int		check_coord_tetra(char *str);
 int		check_coord_tetra2(char *str);
 int		check_coord_tetra3(char *str);
 int		check_coord_tetra4(char *str);
 int		check_coord_tetra5(char *str);
-
+char	**creamap(int size);
 char	***returnform(int *tab);
 int		placepossible(char **map, char **piece, int y, int x);
 char	*dlf(const char *motif, char l, int piece);
@@ -70,5 +73,6 @@ void	form62(char ***bigtab, int j);
 void	form7(char ***bigtab, int j, int nb);
 void	form71(char ***bigtab, int j);
 void	form72(char ***bigtab, int j);
+char	**placemap(char **map, char **piece, int *xy);
 
 #endif

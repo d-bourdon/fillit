@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 16:41:14 by paim              #+#    #+#             */
-/*   Updated: 2016/01/20 17:31:16 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/22 15:39:14 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,25 @@ char	**remap(char **oldmap)
 	sizeadd = ft_strlen(oldmap[0]) + 1;
 	newmap = creamap(sizeadd);
 	return (newmap);
+}
+
+int			countform(char **argv, int j)
+{
+	int		fd;
+	int		ret;
+	char	*buf;
+	char	*bn[0];
+
+	fd = open(argv[1], O_RDONLY);
+	buf = (char *)malloc(sizeof(char) * 21);
+	while ((ret = read(fd, buf, 20)) != -1)
+	{
+		buf[ret] = '\0';
+		if (read(fd, &bn[0], 1) == -1)
+			return (0);
+		if (bn[0] != (char*)'\n')
+			return (0);
+		j++;
+	}
+	return (j);
 }

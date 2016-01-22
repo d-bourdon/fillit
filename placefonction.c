@@ -6,7 +6,7 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 14:46:06 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/22 14:25:51 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/22 17:03:56 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,16 @@ int *movemap(char **map, char **piece)
 	xy[0] = 0;
 	xy[1] = 0;
 	size = ft_strlen(map[0]);
-	while (x < size)
+	while (xy[0] < size)
 	{
-		while(y < size)
+		while(xy[1] < size)
 		{
 			if(placepossible(map, piece, xy[1], xy[0]) == 1)
 				return (xy);
-			y++;
+			xy[1]++;
 		}
-		y = 0;
-		x++;
+		xy[1] = 0;
+		xy[0]++;
 	}
 	xy[0] = -1;
 	return (xy);

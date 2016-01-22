@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 13:24:11 by paim              #+#    #+#             */
-/*   Updated: 2016/01/22 12:55:37 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/22 18:16:45 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,11 @@ void		openingfile(int argc, char **argv)
 		ft_putstr("error\n");
 		return ;
 	}
-	check_file(argv, i, j, t);
+	check_file(argv, i, t);
 	close(filed);
 }
 
-int			*check_file(char **argv, int i, int j, tscheckf *t)
+int			*check_file(char **argv, int i,tscheckf *t)
 {
 	if ((t->fd = open(argv[1], O_RDONLY)) == -1)
 		return (NULL);
@@ -112,7 +112,6 @@ int			*check_file(char **argv, int i, int j, tscheckf *t)
 			ft_putstr("error\n");
 			return (NULL);
 		}
-		j++;
 	}
 	close(t->fd);
 	return (t->tab);
