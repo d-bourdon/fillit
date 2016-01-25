@@ -18,14 +18,14 @@ int		main(int argc, char **argv)
 	char	**map;
 	int		ind;
 	int		*xy;
-	scheckf	*t;
+	tscheckf	*t;
 
 	xy = (int*)malloc(sizeof(int)*2);
 	xy[0] = 0;
 	xy[1] = 0;
 	ind = 0;
-	openingfil(argc, argv);
-	bigtab = returnform(checkfile(argv, 0, t));
+	openingfile(argc, argv);
+	bigtab = returnform(check_file(argv, 0, t));
 	map = creamap(carmini(countform(argv, 0)));
 	t->nbpiece = countform(argv, 0);
 	while (ind < t->nbpiece)

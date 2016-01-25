@@ -116,9 +116,3 @@ int			*check_file(char **argv, int i,tscheckf *t)
 	close(t->fd);
 	return (t->tab);
 }
-
-int			main(int argc, char **argv)
-{
-	openingfile(argc, argv);
-	return (0);
-}
