@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/22 16:52:01 by paim              #+#    #+#             */
-/*   Updated: 2016/01/25 17:24:37 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/26 19:05:48 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,33 +39,28 @@ int		main(int argc, char **argv)
 	xy[1] = 0;
 	ind = 0;
 	t = init_struct();
-	openingfile(argc, argv, t);
-	bigtab = returnform(check_file(argv, 0, t));
-	map = creamap(carmini(countform(argv, 0)));
-	t->nbpiece = countform(argv, 0);
+	openingfile(argc, argv, t);ft_putstr("coucou");
+	bigtab = returnform(check_file(argv, 0, t));ft_putstr("on avance");
+	map = creamap(carmini(countform(argv, 0)));ft_putstr("ok");
+	t->nbpiece = countform(argv, 0);ft_putstr("avant la boucle while");
+	printf("%d\n", t->nbpiece);
 	while (ind < t->nbpiece)
-	{
+	{ft_putstr("i'm in");
 		xy = movemap(map, bigtab[ind]);
-		if (xy[0] >= 0)
+		if (xy[0] > -1)
 		{
 			map = placemap(map, bigtab[ind], xy);
 			ind++;
 		}
 		else
 		{
+			printf("HELLO  %d", xy[0]);
 			map = remap(map);
 			ind = 0;
+			return(0);
 		}
-		while (map[p][i] != '\0')
-		{
-			printf("%c", map[p][i]);
-			i++;
-			if (map[p][i] == '\0')
-			{
-				p++;
-				i = 0;
-			}
-		}
+		ft_putstr("passe");
 	}
+		ft_putstr("apres la boucle");
 	return (0);
 }

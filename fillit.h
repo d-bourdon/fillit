@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 11:54:54 by paim              #+#    #+#             */
-/*   Updated: 2016/01/25 16:31:09 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/26 14:44:00 by dbourdon         ###   ########.fr       */
 /*   Updated: 2016/01/20 12:23:48 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -33,6 +33,7 @@ typedef struct  scheckf
 	int			nbpiece;
 }				tscheckf;
 
+void			ft_affichagemap(char **map);
 int				*movemap(char **map, char **piece);
 char			**remap(char **oldmap);
 int				countform(char **argv, int j);

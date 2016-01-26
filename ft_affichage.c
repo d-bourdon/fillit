@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   placemap.c                                         :+:      :+:    :+:   */
+/*   ft_affichage.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/22 15:40:18 by paim              #+#    #+#             */
-/*   Updated: 2016/01/26 16:21:54 by dbourdon         ###   ########.fr       */
+/*   Created: 2016/01/26 14:40:01 by dbourdon          #+#    #+#             */
+/*   Updated: 2016/01/26 14:47:24 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	**placemap(char **map, char **piece, int *xy)
+void	ft_affichagemap(char **map)
 {
-	int	x;
-	int	y;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
-	x = xy[0];
-	y = xy[1];
-	while (piece[i][y] <= 90 && piece[i][j] >= 65)
+	j = ft_strlen(map[0]);
+
+	while(i < j)
 	{
-		map[x][y] = piece[i][j];
+		ft_putstr(map[i]);
 		i++;
-		x++;
-		if (piece[i][j] >= 90 || piece[i][j] <= 65)
-		{
-			j++;
-			y++;
-		}
 	}
-	return (map);
 }
