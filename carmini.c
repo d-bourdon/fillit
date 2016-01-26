@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 16:41:14 by paim              #+#    #+#             */
-/*   Updated: 2016/01/22 15:39:14 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/25 16:05:32 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,16 @@ char	**creamap(int size)
 	int		j;
 
 	j = 0;
-	if ((map = (char**)malloc(sizeof(char*) * size + 1)))
+	if (!(map = (char**)malloc(sizeof(char*) * size + 1)))
 	{
-		ft_putstr("error\n");
+		ft_putstr("e9rror\n");
 		return (0);
 	}
 	while (size != j)
 	{
-		if ((map[j] = (char*)malloc(sizeof(char) * size)))
+		if (!(map[j] = (char*)malloc(sizeof(char) * size)))
 		{
-			ft_putstr("error\n");
+			ft_putstr("e8rror\n");
 			return (0);
 		}
 		j++;

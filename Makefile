@@ -6,22 +6,22 @@
 #    By: paim <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/07 15:51:25 by paim              #+#    #+#              #
-#    Updated: 2016/01/11 16:06:55 by paim             ###   ########.fr        #
+#    Updated: 2016/01/25 14:33:31 by paim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
 
 SRC = carmini.c\
-	check2.c\
-	check.c\
-	fillit.h\
-	form1.c form2.c form3.c form4.c form5.c form6.c form7.c\
-	ft_returnform.c\
-	main.c\
-	openingfil.c\
-	placefonction.c\
-	placemap.c
+	  check2.c\
+	  check.c\
+	  form1.c form2.c form3.c form4.c form5.c form6.c form7.c\
+	  ft_returnform.c\
+	  main.c\
+	  openingfil.c\
+	  placefonction.c\
+	  placemap.c
+
 OBJ = $(SRC:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
@@ -30,16 +30,21 @@ FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME) :
-	@clang $(FLAGS) $(SRC) -L./libft/ -lft
+$(NAME) : makelibft
+	@clang $(FLAGS) $(SRC) -o $(NAME) -L./libft/ -lft
 	@echo "compilation..."
 
+makelibft:
+	@make -C libft/
+
 clean: 
+	@make -C libft/ clean
 	@rm -f $(OBJ)
 	@echo "supression .o ..."
 
 fclean: clean
 	@rm -f $(NAME)
+	@make -C libft/ fclean
 	@echo "supression totale..."
 
 re: fclean all

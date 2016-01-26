@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 11:54:54 by paim              #+#    #+#             */
-/*   Updated: 2016/01/22 19:08:04 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/25 16:31:09 by paim             ###   ########.fr       */
 /*   Updated: 2016/01/20 12:23:48 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -37,7 +37,7 @@ int				*movemap(char **map, char **piece);
 char			**remap(char **oldmap);
 int				countform(char **argv, int j);
 int				carmini(int i);
-void			openingfile(int argc, char **argv);
+void			openingfile(int argc, char **argv, tscheckf *t);
 int				*check_file(char **argv, int i, tscheckf *t);
 int				check_tetra(char *str);
 int				check_coord_tetra(char *str);
