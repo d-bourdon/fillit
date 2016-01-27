@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 12:28:15 by paim              #+#    #+#             */
-/*   Updated: 2016/01/18 15:20:07 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/27 14:53:48 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,27 @@ static int	check_coord_tetra6(char *str)
 
 int			check_tetra(char *str)
 {
-	if (!check_coord_tetra(str) && !check_coord_tetra2(str)
-			&& !check_coord_tetra3(str) && !check_coord_tetra4(str)
-			&& !check_coord_tetra5(str) && !check_coord_tetra6(str))
-	{
-		ft_putstr("error\n");
-		return (0);
-	}
-	else
-		return (1);
+	int		i;
+
+	i = 0;
+	i = check_coord_tetra(str);
+	if (i != 0)
+		return (i);
+	i = check_coord_tetra2(str);
+	if (i != 0)
+		return (i);
+	i = check_coord_tetra3(str);
+	if (i != 0)
+		return (i);
+	i = check_coord_tetra4(str);
+	if (i != 0)
+		return (i);
+	i = check_coord_tetra5(str);
+	if (i != 0)
+		return (i);
+	i = check_coord_tetra6(str);
+	if (i != 0)
+		return (i);
+	error("checktetra Detection du tetraminos");
+	return (0);
 }

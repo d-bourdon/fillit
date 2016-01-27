@@ -6,7 +6,7 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 14:46:06 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/26 19:05:51 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/27 15:17:16 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,13 @@ int		*movemap(char **map, char **piece)
 	int		*xy;
 	int		size;
 
+	size = 0;
 	xy = (int*)malloc(sizeof(int) * 2);
 	xy[0] = 0;
 	xy[1] = 0;
+	printf("map = %s\n", map[0]);
 	size = ft_strlen(map[0]);
+	printf("HELLO mon size = %d\n", size);
 	while (xy[0] < size)
 	{
 		printf("XY[0] %d\n", xy[0]); fflush(stdout);

@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 13:24:11 by paim              #+#    #+#             */
-/*   Updated: 2016/01/26 16:14:05 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/27 14:54:21 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ static int	check_char(char *str)
 			k++;
 		if (str[i] == '\n')
 			l++;
+		if(str[i] == '\n' && str[i + 1] == '\n')
+			i++;
 		i++;
 	}
 	if (j != 4 || k != 12 || l != 4)
@@ -77,10 +79,12 @@ void		openingfile(int argc, char **argv, tscheckf *t)
 	j = 0;
 	if (argc != 2 || (filed = open(argv[1], O_RDONLY)) == -1)
 	{
-		ft_putstr("er1ror\n");
+		ft_putstr("0er1ror\n");
 		return ;
 	}
-	check_file(argv, i, t);
+	printf("Hey2\n"); fflush(stdout);
+	t->tab = check_file(argv, i, t);
+	printf("Hey3\n"); fflush(stdout);
 	close(filed);
 }
 
@@ -95,6 +99,8 @@ int			*check_file(char **argv, int i, tscheckf *t)
 	{
 		t->buf[t->ret] = '\0';
 		t->tab[i] = check_tetraminos(t->buf);
+		if(t->tab[i] == -1)
+			error("fail check tetramimos");
 		i++;
 	}
 	close(t->fd);

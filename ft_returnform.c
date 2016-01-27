@@ -6,7 +6,7 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 15:15:19 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/22 15:39:26 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/27 15:13:00 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*dlf(const char *motif, char l, int piece)
 	int		i;
 
 	out = (char*)malloc(sizeof(char) * 5);
-	out = (char*)motif;
+	out = ft_strcpy(out, motif);
 	i = 0;
 	while (i < 4)
 	{

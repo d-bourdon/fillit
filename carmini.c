@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 16:41:14 by paim              #+#    #+#             */
-/*   Updated: 2016/01/26 16:21:35 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/27 15:23:21 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,18 @@ char	**creamap(int size)
 {
 	char	**map;
 	int		j;
-
+printf("OK creamap size %d\n", size);
 	j = 0;
 	if (!(map = (char**)malloc(sizeof(char*) * size + 1)))
 	{
-		ft_putstr("e9rror\n");
+		error("Bad malloc creamap");
 		return (0);
 	}
 	while (size != j)
 	{
 		if (!(map[j] = (char*)malloc(sizeof(char) * size)))
 		{
-			ft_putstr("e8rror\n");
+			error("Bad malloc creamap 2");
 			return (0);
 		}
 		j++;
