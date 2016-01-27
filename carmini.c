@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 16:41:14 by paim              #+#    #+#             */
-/*   Updated: 2016/01/27 15:23:21 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/27 15:57:56 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,19 @@ int		carmini(int i)//nbpiece
 		return (0);
 }
 
+char	**init_map(char **map, int size)
+{
+	int	i;
+
+	i = 0;
+	while (map[i] != '\0')
+	{
+		ft_bzero(map[i], size);
+		i++;
+	}
+	return (map);
+}
+
 char	**creamap(int size)
 {
 	char	**map;
@@ -58,6 +71,7 @@ printf("OK creamap size %d\n", size);
 		}
 		j++;
 	}
+	map = init_map(map, size);
 	return (map);
 }
 
@@ -66,6 +80,7 @@ char	**remap(char **oldmap)
 	char	**newmap;
 	int		sizeadd;
 
+	printf("remap dbt");
 	sizeadd = ft_strlen(oldmap[0]) + 1;
 	newmap = creamap(sizeadd);
 	return (newmap);
