@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/22 16:52:01 by paim              #+#    #+#             */
-/*   Updated: 2016/01/27 15:12:23 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/27 18:18:41 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ int		main(int argc, char **argv)
 	xy[1] = 0;
 	ind = 0;
 	t = init_struct();
-	openingfile(argc, argv, t);ft_putstr("coucou");
-	bigtab = returnform(check_file(argv, 0, t));ft_putstr("on avance");
-	map = creamap(carmini(countform(argv, 0)));ft_putstr("ok");
-	t->nbpiece = countform(argv, 0);ft_putstr("avant la boucle while");
-	printf("%d\n", t->nbpiece);
+	openingfile(argc, argv, t);
+	bigtab = returnform(check_file(argv, 0, t));
+	map = creamap(carmini(countform(argv, 0)));
+	t->nbpiece = countform(argv, 0);
+	printf("Nombre de pieces%d\n", t->nbpiece);
 	while (ind < t->nbpiece)
-	{ft_putstr("i'm in");
+	{
+		printf("1er ligne map : %s\n", map[0]);fflush(stdout);
 		xy = movemap(map, bigtab[ind]);
-		printf("X = %d Y = %d", xy[0], xy[1]);
 		if (xy[0] > -1)
 		{
 			map = placemap(map, bigtab[ind], xy);
@@ -52,10 +52,9 @@ int		main(int argc, char **argv)
 		}
 		else
 		{
-			printf("HELLO  %d", xy[0]);
 			map = remap(map);
 			ind = 0;
-			return (0); //evite boucle infini
+		//	return (0); //evite boucle infini
 		}
 		ft_putstr("passe");
 	}

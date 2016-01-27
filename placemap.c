@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/22 15:40:18 by paim              #+#    #+#             */
-/*   Updated: 2016/01/27 11:32:08 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/27 17:12:19 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ char	**placemap(char **map, char **piece, int *xy)
 	j = 0;
 	x = xy[0];
 	y = xy[1];
-	while (piece[i][y] <= 90 && piece[i][j] >= 65)
+	while (i < 4)
 	{
-		map[x][y] = piece[i][j];
-		i++;
-		x++;
-		if (piece[i][j] >= 90 || piece[i][j] <= 65)
+		while (piece[i][j] != '\n' && j < 4)
 		{
+			if (piece[i][j] != '.')
+				map[x + i][y + j] = piece[i][j];
 			j++;
-			y++;
 		}
+		i++;
+		j = 0;
 	}
 	return (map);
 }

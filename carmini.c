@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 16:41:14 by paim              #+#    #+#             */
-/*   Updated: 2016/01/27 15:57:56 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/27 18:18:32 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ char	**creamap(int size)
 {
 	char	**map;
 	int		j;
-printf("OK creamap size %d\n", size);
 	j = 0;
 	if (!(map = (char**)malloc(sizeof(char*) * size + 1)))
 	{
@@ -80,7 +79,6 @@ char	**remap(char **oldmap)
 	char	**newmap;
 	int		sizeadd;
 
-	printf("remap dbt");
 	sizeadd = ft_strlen(oldmap[0]) + 1;
 	newmap = creamap(sizeadd);
 	return (newmap);
@@ -93,16 +91,11 @@ int			countform(char **argv, int j)
 	char	*buf;
 
 	fd = open(argv[1], O_RDONLY);
-	printf("on est la %d", j);
 	buf = (char *)malloc(sizeof(char) * 21);
 	while ((ret = read(fd, buf, 21)) > 0)
 	{
 		printf("\n%d", j);
 		buf[ret] = '\0';
-//		if (read(fd, &bn[0], 1) == -1)
-//			return (0);
-//		if (bn[0] != (char*)'\n')
-//			return (0);
 		j++;
 	}
 	return (j);
