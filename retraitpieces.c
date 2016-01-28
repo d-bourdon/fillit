@@ -6,7 +6,7 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 10:42:42 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/28 14:06:50 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/28 15:51:48 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	retraitpiece(char **map, int npiece)
 		{
 			if (map[i][j] == (65 + npiece))
 				map[i][j] = '.';
-			j++
+			j++;
 		}
 		j = 0;
 		i++;

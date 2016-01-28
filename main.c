@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/22 16:52:01 by paim              #+#    #+#             */
-/*   Updated: 2016/01/27 18:18:41 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/28 18:56:28 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ int		main(int argc, char **argv)
 	map = creamap(carmini(countform(argv, 0)));
 	t->nbpiece = countform(argv, 0);
 	printf("Nombre de pieces%d\n", t->nbpiece);
-	while (ind < t->nbpiece)
-	{
-		printf("1er ligne map : %s\n", map[0]);fflush(stdout);
-		xy = movemap(map, bigtab[ind]);
-		if (xy[0] > -1)
-		{
-			map = placemap(map, bigtab[ind], xy);
+//	while (ind < t->nbpiece)
+//	{
+//		printf("1er ligne map : %s\n", map[0]);fflush(stdout);
+//		xy = movemap(map, bigtab[ind]);
+//		if (xy[0] > -1)
+//		{
+/*			map = placemap(map, bigtab[ind], xy);
 			ind++;
 		}
 		else
@@ -57,7 +57,9 @@ int		main(int argc, char **argv)
 		//	return (0); //evite boucle infini
 		}
 		ft_putstr("passe");
-	}
-		ft_putstr("apres la boucle");
+	}*/
+	if(movemap(&map, bigtab, 0))
+		ft_affichagemap(map);
+	else
 		ft_affichagemap(map);
 }
