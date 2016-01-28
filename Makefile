@@ -6,7 +6,7 @@
 #    By: paim <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/07 15:51:25 by paim              #+#    #+#              #
-#    Updated: 2016/01/27 15:42:53 by paim             ###   ########.fr        #
+#    Updated: 2016/01/28 14:08:35 by dbourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,10 @@ SRC = carmini.c\
 	  main.c\
 	  openingfil.c\
 	  placefonction.c\
-	  placemap.c ft_affichage.c error.c
+	  placemap.c\
+	  ft_affichage.c\
+	  error.c\
+	  retraitpieces.c
 
 OBJ = $(SRC:.c=.o)
 
