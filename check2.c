@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 12:28:15 by paim              #+#    #+#             */
-/*   Updated: 2016/01/27 14:53:48 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/29 13:47:27 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ int			check_tetra(char *str)
 	i = check_coord_tetra6(str);
 	if (i != 0)
 		return (i);
-	error("checktetra Detection du tetraminos");
+	error();
 	return (0);
 }

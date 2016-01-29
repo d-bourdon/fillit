@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 11:54:54 by paim              #+#    #+#             */
-/*   Updated: 2016/01/29 12:19:03 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/29 13:45:45 by dbourdon         ###   ########.fr       */
 /*   Updated: 2016/01/20 12:23:48 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -35,7 +35,7 @@ typedef struct	s_scheckf
 void			retraitpiece(char **map, int npiece);
 char			**init_map(char **map, int size);
 t_scheckf		*init_struct(void);
-void			error(char *msg);
+void			error(void);
 void			ft_affichagemap(char **map);
 int				movemap(char ***map, char ***bigtab, int piecen);
 char			**remap(char **oldmap);
