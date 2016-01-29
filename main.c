@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/22 16:52:01 by paim              #+#    #+#             */
-/*   Updated: 2016/01/29 12:18:50 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/29 15:09:37 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int			main(int argc, char **argv)
 	ind = 0;
 	t = init_struct();
 	openingfile(argc, argv, t);
+	if (countform(argv, 0) > 26)
+		error();
 	bigtab = returnform(check_file(argv, 0, t));
 	map = creamap(carmini(countform(argv, 0)));
 	t->nbpiece = countform(argv, 0);

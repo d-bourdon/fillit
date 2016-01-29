@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 16:41:14 by paim              #+#    #+#             */
-/*   Updated: 2016/01/29 13:46:25 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/29 13:50:09 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ int			countform(char **argv, int j)
 	buf = (char *)malloc(sizeof(char) * 21);
 	while ((ret = read(fd, buf, 21)) > 0)
 	{
-		printf("\n%d", j);
 		buf[ret] = '\0';
 		j++;
 	}

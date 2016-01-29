@@ -1,19 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   checkcharfirt.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/27 10:20:48 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/29 13:51:34 by dbourdon         ###   ########.fr       */
+/*   Created: 2016/01/29 14:40:21 by dbourdon          #+#    #+#             */
+/*   Updated: 2016/01/29 14:52:50 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	error(void)
+
+int	checkcharfirt(char *str, int i)
 {
-	ft_putstr("error\n");
-	exit(1);
+	int	j;
+	int	k;
+	int	l;
+
+	l = 0;
+	k = 0;
+	j = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '#')
+			j++;
+		if (str[i] == '.')
+			k++;
+		if (str[i] == '\n')
+			l++;
+		i++;
+	}
+	if (j != 4 || k != 12 || l != 4)
+	{
+		error();
+		return (0);
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 11:54:54 by paim              #+#    #+#             */
-/*   Updated: 2016/01/29 13:45:45 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/29 14:59:40 by dbourdon         ###   ########.fr       */
 /*   Updated: 2016/01/20 12:23:48 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -32,6 +32,7 @@ typedef struct	s_scheckf
 	int			nbpiece;
 }				t_scheckf;
 
+int				checkcharfirt(char *str, int i);
 void			retraitpiece(char **map, int npiece);
 char			**init_map(char **map, int size);
 t_scheckf		*init_struct(void);
