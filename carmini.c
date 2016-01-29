@@ -6,13 +6,13 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 16:41:14 by paim              #+#    #+#             */
-/*   Updated: 2016/01/27 18:18:32 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/29 12:19:42 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		carmini(int i)//nbpiece
+int		carmini(int i)
 {
 	if (i == 1)
 		return (2);
@@ -55,6 +55,7 @@ char	**creamap(int size)
 {
 	char	**map;
 	int		j;
+
 	j = 0;
 	if (!(map = (char**)malloc(sizeof(char*) * size + 1)))
 	{

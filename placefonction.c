@@ -6,7 +6,7 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 14:46:06 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/28 18:56:25 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/29 12:07:04 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ int		movemap(char ***map, char ***bigtab, int piecen)
 	xy[1] = 0;
 	if (bigtab[piecen] == NULL)
 	{
-		printf("HELLO\n");
 		return (1);
 	}
 	ft_affichagemap(*map);
@@ -67,22 +66,18 @@ int		movemap(char ***map, char ***bigtab, int piecen)
 		{
 			if (placepossible(*map, bigtab[piecen], xy[1], xy[0]) == 1)
 			{
-				printf("yes possible\n");
 				*map = placemap(*map, bigtab[piecen], xy);
 				ft_affichagemap(*map);
-				if(movemap(map, bigtab, piecen + 1) == 1)
+				if (movemap(map, bigtab, piecen + 1) == 1)
 				{
-					printf("I'am BACK !\n");
 					ft_affichagemap(*map);
 					return (1);
 				}
 				else
 				{
-					printf("FUCKKKKKKKKKK");
 					retraitpiece(*map, piecen);
 				}
 			}
-			printf("NOP\n");
 			xy[1]++;
 		}
 		xy[1] = 0;
@@ -90,7 +85,6 @@ int		movemap(char ***map, char ***bigtab, int piecen)
 	}
 	if (piecen == 0)
 	{
-		printf("On remap\n");
 		*map = remap(*map);
 		movemap(map, bigtab, piecen);
 	}

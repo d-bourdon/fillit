@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 11:54:54 by paim              #+#    #+#             */
-/*   Updated: 2016/01/28 18:56:30 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/29 12:19:03 by paim             ###   ########.fr       */
 /*   Updated: 2016/01/20 12:23:48 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -21,9 +21,8 @@
 # include <sys/uio.h>
 # include <unistd.h>
 # include "libft/libft.h"
-# include <stdio.h> /// Warning Printf ///
 
-typedef struct  scheckf
+typedef struct	s_scheckf
 {
 	int			*tab;
 	int			fd;
@@ -31,19 +30,19 @@ typedef struct  scheckf
 	char		*buf;
 	char		*bn[1];
 	int			nbpiece;
-}				tscheckf;
+}				t_scheckf;
 
 void			retraitpiece(char **map, int npiece);
 char			**init_map(char **map, int size);
-tscheckf		*init_struct(void);
+t_scheckf		*init_struct(void);
 void			error(char *msg);
 void			ft_affichagemap(char **map);
 int				movemap(char ***map, char ***bigtab, int piecen);
 char			**remap(char **oldmap);
 int				countform(char **argv, int j);
 int				carmini(int i);
-void			openingfile(int argc, char **argv, tscheckf *t);
-int				*check_file(char **argv, int i, tscheckf *t);
+void			openingfile(int argc, char **argv, t_scheckf *t);
+int				*check_file(char **argv, int i, t_scheckf *t);
 int				check_tetra(char *str);
 int				check_coord_tetra(char *str);
 int				check_coord_tetra2(char *str);

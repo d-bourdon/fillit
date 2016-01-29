@@ -6,15 +6,14 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 13:24:11 by paim              #+#    #+#             */
-/*   Updated: 2016/01/27 14:54:21 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/29 12:18:08 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static int	check_char(char *str)
+static int	check_char(char *str, int i)
 {
-	int	i;
 	int	j;
 	int	k;
 	int	l;
@@ -22,7 +21,6 @@ static int	check_char(char *str)
 	l = 0;
 	k = 0;
 	j = 0;
-	i = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] == '#')
@@ -31,13 +29,13 @@ static int	check_char(char *str)
 			k++;
 		if (str[i] == '\n')
 			l++;
-		if(str[i] == '\n' && str[i + 1] == '\n')
+		if (str[i] == '\n' && str[i + 1] == '\n')
 			i++;
 		i++;
 	}
 	if (j != 4 || k != 12 || l != 4)
 	{
-		ft_putstr("error5\n");
+		error();
 		return (0);
 	}
 	return (1);
@@ -48,28 +46,28 @@ int			check_tetraminos(char *str)
 	int	i;
 
 	i = 0;
-	i = check_char(str);
+	i = check_char(str, 0);
 	if (i == 1)
 	{
 		i = 0;
 		if (str[4] != '\n' || str[9] != '\n' || str[14] != '\n' ||
 				str[19] != '\n')
 		{
-			ft_putstr("e4rror\n");
+			error();
 			return (0);
 		}
 		i = 0;
 		i = check_tetra(str);
 		if (i == 0)
 		{
-			ft_putstr("3error\n");
+			error();
 			return (-1);
 		}
 	}
 	return (i);
 }
 
-void		openingfile(int argc, char **argv, tscheckf *t)
+void		openingfile(int argc, char **argv, t_scheckf *t)
 {
 	int			filed;
 	int			i;
@@ -78,17 +76,12 @@ void		openingfile(int argc, char **argv, tscheckf *t)
 	i = 0;
 	j = 0;
 	if (argc != 2 || (filed = open(argv[1], O_RDONLY)) == -1)
-	{
-		ft_putstr("0er1ror\n");
-		return ;
-	}
-	printf("Hey2\n"); fflush(stdout);
+		error();
 	t->tab = check_file(argv, i, t);
-	printf("Hey3\n"); fflush(stdout);
 	close(filed);
 }
 
-int			*check_file(char **argv, int i, tscheckf *t)
+int			*check_file(char **argv, int i, t_scheckf *t)
 {
 	if ((t->fd = open(argv[1], O_RDONLY)) == -1)
 		return (NULL);
@@ -99,8 +92,8 @@ int			*check_file(char **argv, int i, tscheckf *t)
 	{
 		t->buf[t->ret] = '\0';
 		t->tab[i] = check_tetraminos(t->buf);
-		if(t->tab[i] == -1)
-			error("fail check tetramimos");
+		if (t->tab[i] == -1)
+			error();
 		i++;
 	}
 	close(t->fd);

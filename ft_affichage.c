@@ -6,7 +6,7 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 14:40:01 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/27 16:55:33 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/29 12:08:43 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_affichagemap(char **map)
 	j = 0;
 	j = ft_strlen(map[0]);
 	ft_putchar('\n');
-	while(i < j)
+	while (i < j)
 	{
 		ft_putstr(map[i]);
 		ft_putchar('\n');
