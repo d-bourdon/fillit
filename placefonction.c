@@ -6,7 +6,7 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 14:46:06 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/29 12:07:04 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/29 16:57:19 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,8 @@ int		movemap(char ***map, char ***bigtab, int piecen)
 	xy = (int*)malloc(sizeof(int) * 2);
 	xy[0] = 0;
 	xy[1] = 0;
-	if (bigtab[piecen] == NULL)
-	{
+	if (bigtab[piecen] == NULL || piecen > 25)
 		return (1);
-	}
-	ft_affichagemap(*map);
 	size = ft_strlen(*map[0]);
 	while (xy[0] < size)
 	{
@@ -67,10 +64,8 @@ int		movemap(char ***map, char ***bigtab, int piecen)
 			if (placepossible(*map, bigtab[piecen], xy[1], xy[0]) == 1)
 			{
 				*map = placemap(*map, bigtab[piecen], xy);
-				ft_affichagemap(*map);
 				if (movemap(map, bigtab, piecen + 1) == 1)
 				{
-					ft_affichagemap(*map);
 					return (1);
 				}
 				else

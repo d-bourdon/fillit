@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 13:24:11 by paim              #+#    #+#             */
-/*   Updated: 2016/01/29 14:59:58 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/29 18:08:48 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	check_tetraminosfirt(char *str)
 			return (0);
 		}
 		i = 0;
-		i = check_tetra(str);
+		i = check_tetra(str, 0);
 		if (i == 0)
 		{
 			error();
@@ -82,7 +82,7 @@ int			check_tetraminos(char *str)
 			return (0);
 		}
 		i = 0;
-		i = check_tetra(str);
+		i = check_tetra(str, 1);
 		if (i == 0)
 		{
 			error();

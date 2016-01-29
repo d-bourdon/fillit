@@ -6,17 +6,18 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 12:18:08 by paim              #+#    #+#             */
-/*   Updated: 2016/01/18 15:20:09 by paim             ###   ########.fr       */
+/*   Updated: 2016/01/29 18:05:26 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int	check_coord_tetra(char *str)
+int	check_coord_tetra(char *str, int j)
 {
 	int		i;
 
 	i = 0;
+	i = i + j;
 	while (str[i] != '\0')
 	{
 		if (str[i] == '#' && str[i + 5] == '#' && str[i + 10] == '#' &&
@@ -33,11 +34,12 @@ int	check_coord_tetra(char *str)
 	return (0);
 }
 
-int	check_coord_tetra2(char *str)
+int	check_coord_tetra2(char *str, int j)
 {
 	int		i;
 
 	i = 0;
+	i = i + j;
 	while (str[i] != '\0')
 	{
 		if (str[i] == '#' && str[i + 1] == '#' && str[i + 2] == '#' &&
@@ -57,11 +59,12 @@ int	check_coord_tetra2(char *str)
 	return (0);
 }
 
-int	check_coord_tetra3(char *str)
+int	check_coord_tetra3(char *str, int j)
 {
 	int		i;
 
 	i = 0;
+	i = i + j;
 	while (str[i] != '\0')
 	{
 		if (str[i] == '#' && str[i + 5] == '#' && str[i + 6] == '#' &&
@@ -78,11 +81,12 @@ int	check_coord_tetra3(char *str)
 	return (0);
 }
 
-int	check_coord_tetra4(char *str)
+int	check_coord_tetra4(char *str, int j)
 {
 	int	i;
 
 	i = 0;
+	i = i + j;
 	while (str[i] != '\0')
 	{
 		if (str[i] == '#' && str[i + 1] == '#' && str[i + 2] == '#' &&
@@ -99,11 +103,12 @@ int	check_coord_tetra4(char *str)
 	return (0);
 }
 
-int	check_coord_tetra5(char *str)
+int	check_coord_tetra5(char *str, int j)
 {
 	int	i;
 
 	i = 0;
+	i = i + j;
 	while (str[i] != '\0')
 	{
 		if (str[i] == '#' && str[i + 1] == '#' && str[i + 2] == '#' &&

@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 11:54:54 by paim              #+#    #+#             */
-/*   Updated: 2016/01/29 14:59:40 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/01/29 18:07:52 by dbourdon         ###   ########.fr       */
 /*   Updated: 2016/01/20 12:23:48 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -21,7 +21,7 @@
 # include <sys/uio.h>
 # include <unistd.h>
 # include "libft/libft.h"
-
+# include <stdio.h> ///HELLO 
 typedef struct	s_scheckf
 {
 	int			*tab;
@@ -44,12 +44,12 @@ int				countform(char **argv, int j);
 int				carmini(int i);
 void			openingfile(int argc, char **argv, t_scheckf *t);
 int				*check_file(char **argv, int i, t_scheckf *t);
-int				check_tetra(char *str);
-int				check_coord_tetra(char *str);
-int				check_coord_tetra2(char *str);
-int				check_coord_tetra3(char *str);
-int				check_coord_tetra4(char *str);
-int				check_coord_tetra5(char *str);
+int				check_tetra(char *str, int j);
+int				check_coord_tetra(char *str, int j);
+int				check_coord_tetra2(char *str, int j);
+int				check_coord_tetra3(char *str, int j);
+int				check_coord_tetra4(char *str, int j);
+int				check_coord_tetra5(char *str, int j);
 char			**creamap(int size);
 char			***returnform(int *tab);
 int				placepossible(char **map, char **piece, int y, int x);
