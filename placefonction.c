@@ -6,7 +6,7 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 14:46:06 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/29 16:57:19 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/02/02 15:19:23 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ int		placepossible(char **map, char **piece, int y, int x)
 			if (map[x][y] == '.' || piece[l][k] == '.')
 				k++;
 			else
-			{
 				return (0);
-			}
 			y++;
 		}
 		k = 0;
@@ -65,13 +63,9 @@ int		movemap(char ***map, char ***bigtab, int piecen)
 			{
 				*map = placemap(*map, bigtab[piecen], xy);
 				if (movemap(map, bigtab, piecen + 1) == 1)
-				{
 					return (1);
-				}
 				else
-				{
 					retraitpiece(*map, piecen);
-				}
 			}
 			xy[1]++;
 		}

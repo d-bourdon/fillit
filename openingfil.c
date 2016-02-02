@@ -6,12 +6,11 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/07 13:24:11 by paim              #+#    #+#             */
-/*   Updated: 2016/01/29 18:08:48 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/02/01 14:12:52 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
 
 static int	check_char(char *str, int i)
 {
@@ -49,8 +48,8 @@ static int	check_tetraminosfirt(char *str)
 	if (i == 1)
 	{
 		i = 0;
-		if (str[0] == '\n' || str[4] != '\n' || str[9] != '\n' 
-				|| str[14] != '\n' ||str[19] != '\n')
+		if (str[0] == '\n' || str[4] != '\n' || str[9] != '\n'
+				|| str[14] != '\n' || str[19] != '\n')
 		{
 			error();
 			return (0);
@@ -75,7 +74,7 @@ int			check_tetraminos(char *str)
 	if (i == 1)
 	{
 		i = 0;
-		if (str[0] != '\n' || str[5] != '\n' || str[10] != '\n' 
+		if (str[0] != '\n' || str[5] != '\n' || str[10] != '\n'
 				|| str[15] != '\n' || str[20] != '\n')
 		{
 			error();

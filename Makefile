@@ -6,7 +6,7 @@
 #    By: paim <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/07 15:51:25 by paim              #+#    #+#              #
-#    Updated: 2016/01/29 14:45:19 by dbourdon         ###   ########.fr        #
+#    Updated: 2016/02/02 15:39:04 by paim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ makelibft:
 
 clean: 
 	@make -C libft/ clean
-	@rm -f $(OBJ)
+	@rm -f $(OBJ) *.gch
 	@echo "supression .o ..."
 
 fclean: clean
