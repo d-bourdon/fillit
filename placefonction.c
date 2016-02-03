@@ -6,7 +6,7 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 14:46:06 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/02/03 12:30:10 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/02/03 14:04:29 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,27 @@
 
 int		placepossible(char **map, char **piece, int y, int x)
 {
-	int		k;
-	int		l;
+	int		*kl;
 	int		save;
 
-	k = 0;
-	l = 0;
+	kl = ft_memalloc(2);
 	save = y;
-	while (l < 4 && k < 4)
+	while (kl[1] < 4 && kl[0] < 4)
 	{
-		while (k < 4)
+		while (kl[0] < 4)
 		{
-			if (!(map[x]) && ft_strcmp(piece[l], "....") == 0)
+			if (!(map[x]) && ft_strcmp(piece[kl[1]], "....") == 0)
 				return (1);
-			else if (!(map[x]) && ft_strcmp(piece[l], "....") != 0)
+			else if (!(map[x]) && ft_strcmp(piece[kl[1]], "....") != 0)
 				return (0);
-			if (map[x][y] == '.' || piece[l][k] == '.')
-				k++;
+			if (map[x][y] == '.' || piece[kl[1]][kl[0]] == '.')
+				kl[0]++;
 			else
 				return (0);
 			y++;
 		}
-		k = 0;
-		l++;
+		kl[0] = 0;
+		kl[1]++;
 		x++;
 		y = save;
 	}
@@ -49,9 +47,7 @@ int		movemap(char ***map, char ***bigtab, int piecen)
 	int		size;
 
 	size = 0;
-	xy = (int*)malloc(sizeof(int) * 2);
-	xy[0] = 0;
-	xy[1] = 0;
+	xy = ft_memalloc(2);
 	if (bigtab[piecen] == NULL || piecen > 25)
 		return (1);
 	size = ft_strlen(*map[0]);
