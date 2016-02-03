@@ -6,8 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 11:54:54 by paim              #+#    #+#             */
-/*   Updated: 2016/01/29 18:07:52 by dbourdon         ###   ########.fr       */
-/*   Updated: 2016/01/20 12:23:48 by paim             ###   ########.fr       */
+/*   Updated: 2016/02/03 12:27:15 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +20,7 @@
 # include <sys/uio.h>
 # include <unistd.h>
 # include "libft/libft.h"
-# include <stdio.h> ///HELLO 
+
 typedef struct	s_scheckf
 {
 	int			*tab;

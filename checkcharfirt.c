@@ -6,14 +6,13 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/29 14:40:21 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/01/29 17:21:03 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/02/03 12:26:02 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-
-int	checkcharfirt(char *str, int i)
+int		checkcharfirt(char *str, int i)
 {
 	int	j;
 	int	k;

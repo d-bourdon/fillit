@@ -6,13 +6,13 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/22 16:52:01 by paim              #+#    #+#             */
-/*   Updated: 2016/01/29 16:55:39 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/02/03 12:28:23 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-t_scheckf		*init_struct(void)
+t_scheckf	*init_struct(void)
 {
 	t_scheckf	*t;
 
@@ -26,11 +26,11 @@ t_scheckf		*init_struct(void)
 
 int			main(int argc, char **argv)
 {
-	char	***bigtab;
-	char	**map;
-	int		ind;
-	int		*xy;
-	t_scheckf*t;
+	char		***bigtab;
+	char		**map;
+	int			ind;
+	int			*xy;
+	t_scheckf	*t;
 
 	xy = (int*)malloc(sizeof(int) * 2);
 	xy[0] = 0;

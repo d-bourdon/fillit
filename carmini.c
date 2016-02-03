@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 16:41:14 by paim              #+#    #+#             */
-/*   Updated: 2016/01/29 13:50:09 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/02/03 12:26:31 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ char	**remap(char **oldmap)
 	return (newmap);
 }
 
-int			countform(char **argv, int j)
+int		countform(char **argv, int j)
 {
 	int		fd;
 	int		ret;
