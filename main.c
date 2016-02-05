@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/22 16:52:01 by paim              #+#    #+#             */
-/*   Updated: 2016/02/03 12:28:23 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/02/04 15:54:19 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int			main(int argc, char **argv)
 	bigtab = returnform(check_file(argv, 0, t));
 	map = creamap(carmini(countform(argv, 0)));
 	t->nbpiece = countform(argv, 0);
-	if (movemap(&map, bigtab, 0))
+	if (movemap(&map, bigtab, 0, ft_memalloc(2)))
 		ft_affichagemap(map);
 	else
 		ft_affichagemap(map);

@@ -6,7 +6,7 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 11:54:54 by paim              #+#    #+#             */
-/*   Updated: 2016/02/03 12:27:15 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/02/04 15:54:24 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char			**init_map(char **map, int size);
 t_scheckf		*init_struct(void);
 void			error(void);
 void			ft_affichagemap(char **map);
-int				movemap(char ***map, char ***bigtab, int piecen);
+int				movemap(char ***map, char ***bigtab, int piecen, int *xy);
 char			**remap(char **oldmap);
 int				countform(char **argv, int j);
 int				carmini(int i);

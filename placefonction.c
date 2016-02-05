@@ -6,7 +6,7 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 14:46:06 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/02/03 14:04:29 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/02/04 15:54:22 by paim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,18 @@ int		placepossible(char **map, char **piece, int y, int x)
 	return (1);
 }
 
-int		movemap(char ***map, char ***bigtab, int piecen)
+int		movemap(char ***map, char ***bigtab, int piecen, int *xy)
 {
-	int		*xy;
-	int		size;
-
-	size = 0;
-	xy = ft_memalloc(2);
 	if (bigtab[piecen] == NULL || piecen > 25)
 		return (1);
-	size = ft_strlen(*map[0]);
-	while (xy[0] < size)
+	while (xy[0] < (int)ft_strlen(*map[0]))
 	{
-		while (xy[1] < size)
+		while (xy[1] < (int)ft_strlen(*map[0]))
 		{
 			if (placepossible(*map, bigtab[piecen], xy[1], xy[0]) == 1)
 			{
 				*map = placemap(*map, bigtab[piecen], xy);
-				if (movemap(map, bigtab, piecen + 1) == 1)
+				if (movemap(map, bigtab, piecen + 1, ft_memalloc(2)) == 1)
 					return (1);
 				else
 					retraitpiece(*map, piecen);
@@ -71,7 +65,7 @@ int		movemap(char ***map, char ***bigtab, int piecen)
 	if (piecen == 0)
 	{
 		*map = remap(*map);
-		movemap(map, bigtab, piecen);
+		movemap(map, bigtab, piecen, ft_memalloc(2));
 	}
 	return (0);
 }

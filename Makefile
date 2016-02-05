@@ -6,7 +6,7 @@
 #    By: paim <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/07 15:51:25 by paim              #+#    #+#              #
-#    Updated: 2016/02/02 15:39:04 by paim             ###   ########.fr        #
+#    Updated: 2016/02/04 15:31:23 by paim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,15 +30,15 @@ OBJ = $(SRC:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
 
-.PHONY: clean fclean re
+.PHONY: clean fclean re libft
 
 all: $(NAME)
 
-$(NAME) : makelibft
+$(NAME) : libft
 	@clang $(FLAGS) $(SRC) -o $(NAME) -L./libft/ -lft
 	@echo "compilation..."
 
-makelibft:
+libft:
 	@make -C libft/
 
 clean: 
