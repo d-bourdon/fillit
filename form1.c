@@ -6,7 +6,7 @@
 /*   By: dbourdon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 17:49:15 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/02/02 15:26:47 by paim             ###   ########.fr       */
+/*   Updated: 2016/02/06 12:32:43 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	form14(char ***bigtab, int j)
 
 	k = 0;
 	bigtab[j] = (char**)malloc(sizeof(char*) * 4);
-	bigtab[j][k] = dlf("###.", '#', 1);
+	bigtab[j][k] = dlf("###.", '#', j);
 	bigtab[j][k + 1] = dlf("#...", '#', j);
 	bigtab[j][k + 2] = dlf("....", '#', j);
 	bigtab[j][k + 3] = dlf("....", '#', j);
